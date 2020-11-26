@@ -52,7 +52,7 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.Button2_Click);
             this.button2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Button2_MouseDown);
-            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button2_MouseMove_1);
+            this.button2.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Button1_MouseMove);
             this.button2.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Button2_MouseUp);
             // 
             // Form1
@@ -66,6 +66,7 @@
             this.Text = "Form1";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Form1_KeyDown);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Form1_KeyPress);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseDown);
             this.MouseLeave += new System.EventHandler(this.Form1_MouseLeave);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Form1_MouseMove);

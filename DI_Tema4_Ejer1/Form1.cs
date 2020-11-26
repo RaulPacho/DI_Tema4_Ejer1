@@ -27,7 +27,16 @@ namespace DI_Tema4_Ejer1
 
         private void Button1_MouseMove(object sender, MouseEventArgs e)
         {
-            this.Text = "X: " + (e.X + button1.Location.X) + " Y: " + (e.Y + button1.Location.Y);
+            if (sender == button1)
+            {
+                this.Text = "X: " + (e.X + button1.Location.X) + " Y: " + (e.Y + button1.Location.Y);
+            }
+
+            if(sender == button2)
+            {
+                this.Text = "X: " + (e.X + button2.Location.X) + " Y: " + (e.Y + button2.Location.Y);
+
+            }
         }
 
 
@@ -37,11 +46,6 @@ namespace DI_Tema4_Ejer1
 
         }
 
-        private void Button2_MouseMove_1(object sender, MouseEventArgs e)
-        {
-            this.Text = "X: " + (e.X + button2.Location.X) + " Y: " + (e.Y + button2.Location.Y);
-
-        }
 
         private void Form1_MouseLeave(object sender, EventArgs e)
         {
@@ -57,6 +61,12 @@ namespace DI_Tema4_Ejer1
             if (e.Button.Equals(MouseButtons.Right))
             {
                 button2.BackColor = Color.Red;
+            }
+            if(e.Button == MouseButtons.Middle)
+            {
+                button2.BackColor = Color.Red;
+                button1.BackColor = Color.Red;
+
             }
         }
 
@@ -83,7 +93,12 @@ namespace DI_Tema4_Ejer1
             {
                 button1.BackColor = new Button().BackColor;
             }
+            if (e.Button == MouseButtons.Middle)
+            {
+                button2.BackColor = new Button().BackColor;
+                button1.BackColor = new Button().BackColor;
 
+            }
         }
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
@@ -94,10 +109,8 @@ namespace DI_Tema4_Ejer1
             }
             else
             {
-#if TECLA
-                this.Text = "" + e.KeyData;
-#else
-                this.Text = "" + e.KeyCode;
+#if !TECLA
+             this.Text = "" + e.KeyCode;
 #endif
             }
         }
@@ -108,6 +121,15 @@ namespace DI_Tema4_Ejer1
             {
                 e.Cancel = true;
             }
+
+        }
+
+        private void Form1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+#if TECLA
+             this.Text = "" + e.KeyChar;
+#endif
+
 
         }
     }
