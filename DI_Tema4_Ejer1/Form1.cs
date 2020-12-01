@@ -27,16 +27,12 @@ namespace DI_Tema4_Ejer1
 
         private void Button1_MouseMove(object sender, MouseEventArgs e)
         {
-            if (sender == button1)
-            {
-                this.Text = "X: " + (e.X + button1.Location.X) + " Y: " + (e.Y + button1.Location.Y);
-            }
+            
+            
+                this.Text = "X: " + (e.X + ((Button)sender).Location.X) + " Y: " + (e.Y + ((Button)sender).Location.Y);
+            
 
-            if(sender == button2)
-            {
-                this.Text = "X: " + (e.X + button2.Location.X) + " Y: " + (e.Y + button2.Location.Y);
-
-            }
+            
         }
 
 
@@ -132,5 +128,7 @@ namespace DI_Tema4_Ejer1
 
 
         }
+
+        
     }
 }
